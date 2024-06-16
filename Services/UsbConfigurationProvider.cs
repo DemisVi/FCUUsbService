@@ -1,7 +1,7 @@
 using System;
 using FCUUsbService.Models;
 
-namespace FCUUsbService;
+namespace FCUUsbService.Services;
 
 public class UsbConfigurationProvider : ModelProvider
 {
@@ -14,11 +14,11 @@ public class UsbConfigurationProvider : ModelProvider
 
         if (ports is { Count: <= 0 }) return new();
 
-        var conf = ports.Select(x => KeyValuePair.Create(Capture(x[DevPath], new(Constants.RegexConstants.UsbPath)), x[DevName]));
+        var conf = ports.Select(x => KeyValuePair.Create(Capture(x[DevPath], Shared.RegExpr.UsbPath), x[DevName]));
 
         return new()
         {
-            Devices = new(conf),
+            UsbDevices = new(conf),
         };
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace FCUUsbService;
+namespace FCUUsbService.Services;
 
 public abstract class Tool : IDisposable
 {

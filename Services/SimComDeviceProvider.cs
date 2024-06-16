@@ -1,12 +1,12 @@
 using System;
 using FCUUsbService.Models;
 
-namespace FCUUsbService;
+namespace FCUUsbService.Services;
 
 public class SimComDeviceProvider : ModelProvider
 {
     protected Udevadm udev = new();
-    public SimComDevice[] GetSimComDevices()
+    public IEnumerable<SimComDevice> GetSimComDevices()
     {
         var udevOutput = udev.GetDeviceModemPorts();
         return udevOutput.Select(x => new SimComDevice()

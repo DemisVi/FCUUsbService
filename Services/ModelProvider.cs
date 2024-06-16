@@ -1,6 +1,8 @@
 using System;
 using System.Text.RegularExpressions;
 
+namespace FCUUsbService.Services;
+
 public abstract class ModelProvider
 {
     /// <summary>

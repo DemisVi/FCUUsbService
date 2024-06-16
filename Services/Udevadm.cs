@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using FCUUsbService.Models;
 
-namespace FCUUsbService;
+namespace FCUUsbService.Services;
 
 public class Udevadm : Tool
 {
